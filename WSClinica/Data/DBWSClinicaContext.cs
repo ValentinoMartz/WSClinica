@@ -12,5 +12,6 @@ namespace WSClinica.Data
         DbSet<Habitacion> Habitaciones { get; set; }
         DbSet<Medico> Medicos { get; set; }
         DbSet<Paciente> Pacientes { get; set; }
+        DbSet<Especialidad> Especialidades { get; set; }
     }
 }

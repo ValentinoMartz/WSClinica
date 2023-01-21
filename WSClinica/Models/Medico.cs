@@ -19,8 +19,9 @@ namespace WSClinica.Models
         [Column(TypeName = "varchar(50)")]
         public string Nombre{ get; set; }
 
-        [ForeignKey("EspecialidadId")]
         public int EspecialidadId{ get; set; }
+        [ForeignKey("EspecialidadId")]
+        public Especialidad Especialidad { get; set; }
         public int Matricula{ get; set; }
         public DateTime? FechaNacimiento{ get; set; }
 
