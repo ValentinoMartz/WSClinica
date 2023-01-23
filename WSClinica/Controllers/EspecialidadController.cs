@@ -9,6 +9,7 @@ using WSClinica.Models;
 using WSClinica.Migrations;
 namespace WSClinica.Controllers
 {
+    
     [Route("api/[controller]")]
     [ApiController]
     public class EspecialidadController : ControllerBase
@@ -61,7 +62,7 @@ namespace WSClinica.Controllers
         }
 
         [HttpDelete("{ID}")]
-        public ActionResult<Especialidad> Delete(int id, [FromBody] Especialidad especialidad)
+        public ActionResult<Especialidad> Delete(int id)
         {
             var especialidadOriginal = (from e in context.Especialidades
                                    where e.Id == id
@@ -73,7 +74,7 @@ namespace WSClinica.Controllers
             }
             context.Especialidades.Remove(especialidadOriginal);
             context.SaveChanges();
-            return especialidad;
+            return especialidadOriginal;
         }
     }
 }

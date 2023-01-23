@@ -59,7 +59,7 @@ namespace WSClinica.Controllers
         }
 
         [HttpDelete("{ID}")]
-        public ActionResult<Habitacion> Delete(int id, [FromBody] Habitacion habitacion)
+        public ActionResult<Habitacion> Delete(int id)
         {
             var habitacionOriginal = (from h in context.Habitaciones
                                    where h.Id == id
@@ -71,7 +71,7 @@ namespace WSClinica.Controllers
             }
             context.Habitaciones.Remove(habitacionOriginal);
             context.SaveChanges();
-            return habitacion;
+            return habitacionOriginal;
         }
 
     }

@@ -60,7 +60,7 @@ namespace WSClinica.Controllers
         }
 
         [HttpDelete("{IdMedico}")]
-        public ActionResult<Medico> Delete (int IdMedico, [FromBody] Medico medico) 
+        public ActionResult<Medico> Delete (int IdMedico) 
         {
             var medicoOriginal = (from m in context.Medicos
                                   where m.IdMedico == IdMedico
@@ -72,7 +72,7 @@ namespace WSClinica.Controllers
             }
             context.Medicos.Remove(medicoOriginal);
             context.SaveChanges();
-            return medico;
+            return medicoOriginal;
         }
     }
 }
