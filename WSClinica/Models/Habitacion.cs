@@ -11,6 +11,7 @@ namespace WSClinica.Models
         public int Id { get; set; }
 
         [Range(1,100, ErrorMessage = "Solo se aceptan entre 1 y 100")]
+        [RegularExpression(@"[A-Z]{3}[0-9]{3}")]
         public int Numero { get; set; }
 
         [Required]
